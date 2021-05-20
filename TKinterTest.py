@@ -10,6 +10,10 @@ myRolls = []
 rollTimes = 0
 dieType = 0
 
+def results():
+    print(playlistList)
+
+
 def happyEmotion():
     # function for creation of eye
     def eye(col, rad):
@@ -19,7 +23,7 @@ def happyEmotion():
         pen.circle(rad)
         pen.end_fill()
         pen.up()
- 
+
  
     # draw face
     pen.fillcolor('yellow')
@@ -27,7 +31,7 @@ def happyEmotion():
     pen.circle(100)
     pen.end_fill()
     pen.up()
-     
+
     # draw eyes
     pen.goto(-40, 120)
     eye('white', 15)
@@ -111,11 +115,7 @@ def sadEmotion():
     smiles.circle(100,90)
     turtle.done()
 
-    print(playlistList)
-def addToList():
-    newItem = E1.get()
-    playlistList.append(newItem)
-    E1.delete(0, END)
+
 
 def exportList():
     with open("test.txt", "w") as f:
@@ -130,17 +130,21 @@ def mainMenu():
     LMain = Label(top, text="Block 5 GUI Projects")
     LMain.grid(column = 0, row = 1)
 
-    B1Main = Button(text="    Week 1   ", bg="#b4b570", command = week1)
+    B1Main = Button(text="    Week 1   ", bg="#CBC3E3", command = week1)
     B1Main.grid(column = 0, row = 2)
 
-    B2Main = Button(text="    Week 2   ", bg="#a2a365", command = week2)
+    B2Main = Button(text="    Week 2   ", bg="#CBC3E3", command = week2)
     B2Main.grid(column = 0, row = 3)
 
-    B3Main = Button(text="    Week 3   ", bg="#909159", command = week3)
+    B3Main = Button(text="    Week 3   ", bg="#CBC3E3", command = week3)
     B3Main.grid(column = 0, row = 4)
 
 
 def week1():
+    def addToList():
+        newItem = E1.get()
+        playlistList.append(newItem)
+        E1.delete(0, END)
     clearWindow()
     #This is a Lable widget
     L1 = Label(top, text="playlistList")
@@ -160,7 +164,7 @@ def week1():
     B3 = Button(text= "    Export List    ", bg="#34568B", command = exportList)
     B3.grid(column = 0, row = 4)
 
-    Bclear = Button(text= "Main Menu", bg="#34568B", command = clearWindow)
+    Bclear = Button(text= "Main Menu", bg="#90ee90", command = mainMenu)
     Bclear.grid(column = 0, row = 5)
 
 def week2():
@@ -186,32 +190,41 @@ def week2():
 
     L2W2 = Label(top, text = "How many sides?")
     L2W2.grid(column= 2, row=2)
+
+    L3W2 = Label(top, text = "How many roles?")
+    L3W2.grid(column = 0, row =2)
+    
     E1W2 = Entry(top, bd = 5)
     E1W2.grid(column = 0, row =3)
 
     E2W2 = Entry(top, bd = 5)
     E2W2.grid(column =2, row=3)
 
-    B1B2 = Button(text="Roll!", bg="Yellow")
-    B1B2.grid(column= 2, row= 3)
+    B1B2 = Button(text="Roll!", bg="#34568B")
+    B1B2.grid(column= 2, row= 4)
     #to add: roll function and exit button
+    Bclear = Button(text= "Main Menu", bg="#90ee90", command = mainMenu)
+    Bclear.grid(column = 0, row = 5)
 
 def week3():
     clearWindow()
     L1W3 = Label(top, text = "Emotion Drawer")
     L1W3.grid(column = 0, row=1)
 
-    B1W3 = Button(text="happy", bg = "yellow", command = happyEmotion)
+    B1W3 = Button(text="happy", bg = "#34568B", command = happyEmotion)
     B1W3.grid(column=0, row= 2)
 
-    B2W3 = Button(text="Angry", bg = "yellow", command = angryEmotion)
+    B2W3 = Button(text="Angry", bg = "#34568B", command = angryEmotion)
     B2W3.grid(column=0, row= 3)
 
-    B3W3 = Button(text="Surprise", bg = "yellow", command = surpriseEmotion)
+    B3W3 = Button(text="Surprise", bg = "#34568B", command = surpriseEmotion)
     B3W3.grid(column=0, row= 4)
 
-    B4W3 = Button(text="Sad", bg = "yellow", command = sadEmotion)
+    B4W3 = Button(text="Sad", bg = "#34568B", command = sadEmotion)
     B4W3.grid(column=0, row= 5)
+
+    Bclear = Button(text= "Main Menu", bg="#90ee90", command = mainMenu)
+    Bclear.grid(column = 0, row = 5)
 
     
     
