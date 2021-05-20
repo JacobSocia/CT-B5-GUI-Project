@@ -80,6 +80,37 @@ def angryEmotion():
 
     turtle.done()
 
+def surpriseEmotion():
+    smiles.penup()
+    smiles.goto(-75,150)
+    smiles.pendown()
+    smiles.circle(10)     #eye one
+
+    smiles.penup()
+    smiles.goto(75, 150)
+    smiles.pendown()
+    smiles.circle(10)     #eye two
+
+
+    smiles.penup()
+    smiles.goto(0,50)
+    smiles.pendown()
+    smiles.circle(-100)
+
+    turtle.done()
+def sadEmotion():
+    smiles.penup()
+    smiles.goto(0,50)
+    smiles.pendown()
+    smiles.circle(-100,90)
+
+    smiles.penup()
+    smiles.setheading(180)
+    smiles.goto(0,50)
+    smiles.pendown()
+    smiles.circle(100,90)
+    turtle.done()
+
     print(playlistList)
 def addToList():
     newItem = E1.get()
@@ -175,6 +206,12 @@ def week3():
 
     B2W3 = Button(text="Angry", bg = "yellow", command = angryEmotion)
     B2W3.grid(column=0, row= 3)
+
+    B3W3 = Button(text="Surprise", bg = "yellow", command = surpriseEmotion)
+    B3W3.grid(column=0, row= 4)
+
+    B4W3 = Button(text="Sad", bg = "yellow", command = sadEmotion)
+    B4W3.grid(column=0, row= 5)
 
     
     
